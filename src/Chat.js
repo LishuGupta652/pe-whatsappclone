@@ -25,8 +25,37 @@ function Chat() {
                     <IconButton><MoreVert /></IconButton>
                  </div>
             </div>
-            <div className="chat__body"></div>
-            <div className="chat__footer"></div>
+            <div className="chat__body">
+                <p className={`chat__message ${true && 'chat__receiver'}`}>
+                    
+                <span className="chat__name">Lishu gupta</span>
+                    Hey Guys
+                    <span className="chat__timestamp">2:52pm</span>
+                </p>
+               <p className={`chat__message ${true && 'chat__receiver'}`}>
+                    
+                <span className="chat__name">Lishu gupta</span>
+                    Hey Guys
+                    <span className="chat__timestamp">2:52pm</span>
+                </p>
+                 <p className={`chat__message $`}>
+                    
+                <span className="chat__name">someone</span>
+                    Are you there
+                    <span className="chat__timestamp">2:53pm</span>
+                </p>
+              
+              
+            </div>
+            <div className="chat__footer">
+                <InsertEmoticonIcon />
+                <form action="">
+                    <input type="text" />
+                    <button>Send a Message</button>
+                </form>
+                <MicIcon />
+
+            </div>
         </div>
     )
 }
