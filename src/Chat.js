@@ -6,10 +6,17 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 import MicIcon from '@material-ui/icons/Mic'
 
 function Chat() {
+    const [input, setInput] = React.useState("")
     const [seed, setSeed] = React.useState('')
     React.useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
     }, [])
+
+    const sendMessage = (e) => { 
+        e.preventDefault();
+        console.log("You typed >> ", input);
+        setInput("")
+    }
 
     return (
         <div className="chat">
@@ -52,8 +59,8 @@ function Chat() {
             <div className="chat__footer">
                 <InsertEmoticonIcon />
                 <form action="">
-                    <input type="text" placeholder="Please type a message " />
-                    <button>Send a Message</button>
+                    <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Please type a message " />
+                    <button onClick={sendMessage} type="submit">Send a Message</button>
                 </form>
                 <MicIcon />
 
